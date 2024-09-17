@@ -15,12 +15,9 @@
                 <div class="logo">
                     <a href="https://www.instagram.com/anshh.ily/?hl=en" target="_blank">Anshh.</a>
                 </div>
-                <input type="checkbox" id="click">
-                <label for="click" class="mainicon">
-                    <div class="menu">
-                        <i class="fa-solid fa-bars"></i>
-                    </div>
-                </label>
+                <button class="mode-toggle">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
                 <ul>
                 <li><a href="#" class="active" style="--navAni:1">Home</a></li>
                 <li><a href="#" style="--navAni:2">About</a></li>
@@ -28,10 +25,6 @@
                 <li><a href="#" style="--navAni:4">Portfolio</a></li>
                 <li><a href="#" style="--navAni:5">Contact</a></li>
             </ul>
-            <label class="mode">
-                <input type="checkbox" id="darkModeToggle">
-                <i class="fa-solid fa-moon"></i>
-            </label>
             </div>
         </header>
         <div class="container">
@@ -39,7 +32,7 @@
                 <div class="detail">
                     <h3>Hi I'm</h3>
                     <h1>
-                        <span style="color:#52489C;">Ansh</span>        
+                        <span style="color:#52489C;">Ansh</span>
                         "Raj"
                     </h1>
                     <p>
@@ -58,5 +51,23 @@
             </div>
         </div>
     </section>
+
+    <script>
+        const themeToggle = document.querySelector('.mode-toggle');
+
+        const body = document.body;
+
+        body.classList.add('light-theme');
+
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('light-theme')) {
+                body.classList.remove('light-theme');
+                body.classList.add('dark-theme');
+            } else {
+                body.classList.remove('dark-theme');
+                body.classList.add('light-theme');
+            }
+        });
+    </script>
 </body>
 </html>
